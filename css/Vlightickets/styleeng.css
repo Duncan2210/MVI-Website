@@ -1,0 +1,770 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;500;700&display=swap");
+
+:root {
+  --hoverbutblue: #0088a9;
+  --activebutblue: #006680;
+  --hallowbutorghover: #ff9900;
+  --hallowbutorgact: #ff6a00;
+
+  --butcontblue: rgba(0, 136, 169, 1);
+  --butcontbluehov: rgba(0, 136, 169, 0.8);
+  --butcontblueact: rgba(0, 136, 169, 0.6);
+  --butnl: rgba(226, 1, 1, 1);
+  --butnlact: rgba(226, 1, 1, 0.6);
+  --butcontorgnorm: rgba(255, 153, 0, 1);
+  --butcontorgacthov: rgba(255, 153, 0, 0.8);
+  --butcontorgactive: rgba(255, 153, 0, 0.6);
+
+  --navbarouter: #00e682;
+  --navbarcolor: #00ad62;
+
+  --backcolors: #17181c;
+  --backcolorslight: #24252a;
+
+  /* Light mode */
+  --lightback1: rgb(200, 200, 200);
+
+  /* Text type */
+  --poptyp: "Poppins", sans-serif;
+
+  --grag1: hsla(348, 96%, 62%, 0.5);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: var(--navbarcolor);
+  font-family: "Montserrat Alternates", sans-serif;
+  overflow: hidden;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+  z-index: 99;
+}
+
+.nav__links li {
+  list-style: none;
+  margin-left: 50px;
+}
+
+.nav__links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.logopic {
+  height: 20px;
+}
+
+.logopic .logoimg {
+  height: 100%;
+  left: -120%;
+  position: absolute;
+  width: 75px;
+}
+
+.nav__links .langen:hover {
+  color: var(--butcontblue);
+}
+
+.nav__links .langen:active {
+  color: var(--butcontblueact);
+}
+
+.nav__links a:hover {
+  color: var(--hallowbutorghover);
+}
+
+.nav__links a:active {
+  color: var(--hallowbutorgact);
+}
+
+.menubarsnav {
+  display: none;
+}
+
+.menubarsnav div {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav__links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav__links {
+    position: absolute;
+    right: 0px;
+    height: 30vh;
+    top: 8vh;
+    background-color: var(--navbarouter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav__links li {
+    opacity: 0;
+  }
+  .menubarsnav {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav__active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .Line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .Line2 {
+  opacity: 0;
+}
+.toggle .Line3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
+
+/* Tickets Main */
+
+.TopPart .mainpa {
+  height: 100px;
+  font-family: var(--poptyp);
+  text-align: center;
+  font-size: 20px;
+  background: #fff;
+}
+
+.TopPart {
+  background: #90ffcf;
+}
+
+/* Ticket 1 */
+.TopPart .Flight1 {
+  font-family: var(--poptyp);
+  cursor: pointer;
+  border: #17181c solid 3px;
+  height: 18vh;
+  border-radius: 15px;
+  text-align: center;
+  background: rgb(216, 255, 202);
+}
+
+.TopPart .Flight1 .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.229) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://greekreporter.com/wp-content/uploads/2021/03/plane-cover-1392x692.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.TopPart .Flight1:hover .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.544) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://greekreporter.com/wp-content/uploads/2021/03/plane-cover-1392x692.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.TopPart .Flight1 h2 {
+  position: relative;
+  left: -275px;
+  top: -110px;
+}
+
+.TopPart .Flight1 p {
+  position: relative;
+  left: -285px;
+  top: -110px;
+}
+
+.TopPart .Flight1 .flightcomp {
+  color: #0088a9;
+  font-weight: 800;
+  position: relative;
+  left: -395px;
+}
+
+.TopPart .Flight1 h4 {
+  position: relative;
+  left: 200px;
+  top: -165px;
+  transform: rotate(-10deg);
+  font-size: 25px;
+  color: red;
+}
+
+/* Ticket 2 */
+.TopPart .Flight2 {
+  font-family: var(--poptyp);
+  cursor: pointer;
+  border: #333436 solid 3px;
+  border-radius: 15px;
+  height: 18vh;
+  background: rgb(216, 255, 202);
+  text-align: center;
+}
+
+.TopPart .Flight2 .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.109) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://cdn.cnn.com/cnnnext/dam/assets/210828100038-alitalia-tz-exlarge-169.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.TopPart .Flight2:hover .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.587) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://cdn.cnn.com/cnnnext/dam/assets/210828100038-alitalia-tz-exlarge-169.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.TopPart .Flight2 h2 {
+  position: relative;
+  left: -325px;
+  top: -110px;
+}
+
+.TopPart .Flight2 p {
+  position: relative;
+  left: -285px;
+  top: -110px;
+}
+
+.TopPart .Flight2 .flightcomp {
+  color: #00671d;
+  font-weight: 800;
+  position: relative;
+  left: -377px;
+}
+
+.TopPart .Flight2 h4 {
+  position: relative;
+  left: 200px;
+  top: -165px;
+  transform: rotate(-10deg);
+  font-size: 25px;
+  color: red;
+}
+
+/* Ticket 3 */
+.TopPart .Flight3 {
+  font-family: var(--poptyp);
+  cursor: pointer;
+  border: #333436 solid 3px;
+  border-radius: 15px;
+  height: 18vh;
+  background: rgb(216, 255, 202);
+  text-align: center;
+}
+
+.TopPart .Flight3 .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.109) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://upload.wikimedia.org/wikipedia/commons/8/85/Air_Spain_Douglas_DC-8-21EC-BXR.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.TopPart .Flight3:hover .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.587) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://upload.wikimedia.org/wikipedia/commons/8/85/Air_Spain_Douglas_DC-8-21EC-BXR.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.TopPart .Flight3 h2 {
+  position: relative;
+  left: -305px;
+  top: -110px;
+}
+
+.TopPart .Flight3 p {
+  position: relative;
+  left: -285px;
+  top: -110px;
+}
+
+.TopPart .Flight3 .flightcomp {
+  color: #ffb700;
+  font-weight: 800;
+  position: relative;
+  left: -373px;
+}
+
+.TopPart .Flight3 h4 {
+  position: relative;
+  left: 200px;
+  top: -165px;
+  transform: rotate(-10deg);
+  font-size: 25px;
+  color: red;
+}
+
+/* Ticket 4 */
+.TopPart .Flight4 {
+  font-family: var(--poptyp);
+  cursor: pointer;
+  border: #4c4c4d solid 3px;
+  border-radius: 15px;
+  height: 18vh;
+  background: rgb(216, 255, 202);
+  text-align: center;
+}
+
+.TopPart .Flight4 .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.109) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://www.forumdaily.com/wp-content/uploads/2018/05/Depositphotos_42250421_m-2015.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.TopPart .Flight4:hover .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.587) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://www.forumdaily.com/wp-content/uploads/2018/05/Depositphotos_42250421_m-2015.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.TopPart .Flight4 h2 {
+  position: relative;
+  left: -285px;
+  top: -110px;
+}
+
+.TopPart .Flight4 p {
+  position: relative;
+  left: -285px;
+  top: -110px;
+}
+
+.TopPart .Flight4 .flightcomp {
+  color: #000154;
+  font-weight: 800;
+  position: relative;
+  left: -383px;
+}
+
+.TopPart .Flight4 h4 {
+  position: relative;
+  left: 200px;
+  top: -165px;
+  transform: rotate(-10deg);
+  font-size: 25px;
+  color: red;
+}
+
+/* Ticket 5 */
+.TopPart .Flight5 {
+  font-family: var(--poptyp);
+  cursor: pointer;
+  border: #4c4c4d solid 3px;
+  border-radius: 15px;
+  height: 18vh;
+  background: rgb(216, 255, 202);
+  text-align: center;
+}
+
+.TopPart .Flight5 .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.109) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://imageio.forbes.com/specials-images/imageserve/1211627576/A-Norwegian-Air-Boeing-737-800-plane-comes-in-to-land-at-Alta-Airport-in-northern/960x0.jpg?format=jpg&width=960")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.TopPart .Flight5:hover .pic1f1 {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.587) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://imageio.forbes.com/specials-images/imageserve/1211627576/A-Norwegian-Air-Boeing-737-800-plane-comes-in-to-land-at-Alta-Airport-in-northern/960x0.jpg?format=jpg&width=960")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 15vh;
+  left: 10px;
+  width: 15%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.TopPart .Flight5 h2 {
+  position: relative;
+  left: -255px;
+  top: -110px;
+}
+
+.TopPart .Flight5 p {
+  position: relative;
+  left: -285px;
+  top: -110px;
+}
+
+.TopPart .Flight5 .flightcomp {
+  color: #000154;
+  font-weight: 800;
+  position: relative;
+  left: -355px;
+}
+
+.TopPart .Flight5 h4 {
+  position: relative;
+  left: 200px;
+  top: -165px;
+  transform: rotate(-10deg);
+  font-size: 25px;
+  color: red;
+}
+
+/* Footer Section */
+
+.footer {
+  padding: 40px 0;
+  background-color: #00ad62;
+}
+
+.footer .social {
+  text-align: center;
+  padding: 25px;
+  color: #ededed;
+}
+
+.footer .social a {
+  font-size: 24px;
+  color: inherit;
+  border: 1px solid #ededed;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+  opacity: 0.9;
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.footer ul li a {
+  color: #ededed;
+  text-decoration: none;
+  font-family: var(--poptyp);
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.footer ul li a:hover {
+  opacity: 1;
+}
+
+.footer .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-family: var(--poptyp);
+  font-size: 13px;
+  color: rgb(190, 190, 190);
+}
+
+.lower {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--poptyp);
+}
+
+.lower .animalcare {
+  height: 10vh;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.lower .animalcare .maxp {
+  color: red;
+}
+
+.lower .animalcare .p1 {
+  cursor: pointer;
+  text-align: left;
+  margin-left: 10px;
+  background: rgb(216, 255, 202);
+  width: 90%;
+  border: #333436 solid 3px;
+}
+
+.lower .animalcare .p1 h2 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p1 h3 {
+  margin-left: 3px;
+  color: red;
+}
+
+.lower .animalcare .p1 h4 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p1 h6 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p2 {
+  cursor: pointer;
+  text-align: left;
+  margin-left: 10px;
+  background: rgb(216, 255, 202);
+  width: 90%;
+  border: #333436 solid 3px;
+}
+
+.lower .animalcare .p2 h2 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p2 h3 {
+  margin-left: 3px;
+  color: red;
+}
+
+.lower .animalcare .p2 h4 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p2 h6 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p3 {
+  cursor: pointer;
+  text-align: left;
+  margin-left: 10px;
+  background: rgb(216, 255, 202);
+  width: 90%;
+  border: #333436 solid 3px;
+}
+
+.lower .animalcare .p3 h2 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p3 h3 {
+  margin-left: 3px;
+  color: red;
+}
+
+.lower .animalcare .p3 h4 {
+  margin-left: 3px;
+}
+
+.lower .animalcare .p3 h6 {
+  margin-left: 3px;
+}

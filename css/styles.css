@@ -1,0 +1,780 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;500;700&display=swap");
+
+:root {
+  --hoverbutblue: #0088a9;
+  --activebutblue: #006680;
+  --hallowbutorghover: #ff9900;
+  --hallowbutorgact: #ff6a00;
+
+  --butcontblue: rgba(0, 136, 169, 1);
+  --butcontbluehov: rgba(0, 136, 169, 0.8);
+  --butcontblueact: rgba(0, 136, 169, 0.6);
+  --butnl: rgba(226, 1, 1, 1);
+  --butnlact: rgba(226, 1, 1, 0.6);
+  --butcontorgnorm: rgba(255, 153, 0, 1);
+  --butcontorgacthov: rgba(255, 153, 0, 0.8);
+  --butcontorgactive: rgba(255, 153, 0, 0.6);
+
+  --navbarouter: #00e682;
+  --navbarcolor: #00ad62;
+
+  --backcolors: #17181c;
+  --backcolorslight: #24252a;
+
+  /* Light mode */
+  --lightback1: rgb(200, 200, 200);
+
+  /* Text type */
+  --poptyp: "Poppins", sans-serif;
+
+  --grag1: hsla(348, 96%, 62%, 0.5);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: var(--navbarcolor);
+  font-family: "Montserrat Alternates", sans-serif;
+  overflow: hidden;
+}
+
+.logo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+.nav__links li {
+  list-style: none;
+  margin-left: 50px;
+}
+
+.nav__links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.logopic {
+  height: 20px;
+}
+
+.logopic .logoimg {
+  height: 100%;
+  left: -120%;
+  position: absolute;
+  width: 75px;
+}
+
+.nav__links .langen:hover {
+  color: var(--butcontblue);
+}
+
+.nav__links .langen:active {
+  color: var(--butcontblueact);
+}
+
+.nav__links a:hover {
+  color: var(--hallowbutorghover);
+}
+
+.nav__links a:active {
+  color: var(--hallowbutorgact);
+}
+
+.menubarsnav {
+  display: none;
+}
+
+.menubarsnav div {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav__links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav__links {
+    position: absolute;
+    right: 0px;
+    height: 30vh;
+    top: 8vh;
+    background-color: var(--navbarouter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav__links li {
+    opacity: 0;
+  }
+  .menubarsnav {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav__active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .Line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .Line2 {
+  opacity: 0;
+}
+.toggle .Line3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+}
+
+.textsection {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightback1);
+  color: #24252a;
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+  position: relative;
+  z-index: -2;
+}
+
+.textsection h1 {
+  top: 10px;
+  position: relative;
+  font-weight: 600;
+  margin-bottom: 50px;
+  z-index: -1;
+}
+
+.textsection p {
+  text-align: center;
+  font-weight: 300;
+}
+
+.somevak {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  font-family: var(--poptyp);
+}
+
+.somevak h1 {
+  padding: 1rem 0 2rem 0;
+  font-weight: 600;
+}
+
+.somevak p {
+  font-weight: 300;
+}
+
+.somevak .vakk1 .vak1 {
+  top: 130px;
+  left: 75px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  padding: 0 1rem 0 0;
+}
+
+.somevak .vakk1 .vak1 .img {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.545) 100%
+    ),
+    url("https://images.corendonresources.com/L1E7868A1W1024H684.webp?v=220521194518")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  filter: drop-shadow(10px 10px 15px grey);
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out 0.3s;
+}
+
+.somevak .vakk1 .vak1 .img:hover {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.229) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://images.corendonresources.com/L1E7868A1W1024H684.webp?v=220521194518")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.somevak .vakk1 .vak1 .img:active {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.526) 0%,
+      rgba(0, 0, 0, 0.918) 100%
+    ),
+    url("https://images.corendonresources.com/L1E7868A1W1024H684.webp?v=220521194518")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.somevak .vakk1 .vak1 h4 {
+  position: relative;
+  left: 3px;
+  top: 70%;
+  font-weight: 600;
+  color: #fff;
+}
+
+.somevak .vakk1 .vak1 p {
+  position: relative;
+  left: -133px;
+  top: 80%;
+  font-weight: 200;
+  font-size: 14px;
+  color: #fff;
+}
+
+.somevak .vakk1 .vak1 .pricetag1 {
+  top: 200px;
+  left: 250px;
+  position: absolute;
+  background: #00ad62;
+  border: 3px #fff;
+  color: white;
+  border-style: solid;
+  width: 5%;
+  padding: 2px;
+  border-radius: 5px;
+  z-index: 2;
+  cursor: pointer;
+}
+.somevak .vakk2 .vak2 {
+  top: 130px;
+  left: 540px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  padding: 0 1rem 0 0;
+}
+
+.somevak .vakk2 .vak2 .img {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.545) 100%
+    ),
+    url("https://www.maleta.nl/wp-content/uploads/2019/02/vakantie-naar-griekenland.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  filter: drop-shadow(10px 10px 15px grey);
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out 0.3s;
+}
+
+.somevak .vakk2 .vak2 .img:hover {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.229) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://www.maleta.nl/wp-content/uploads/2019/02/vakantie-naar-griekenland.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.somevak .vakk2 .vak2 .img:active {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.526) 0%,
+      rgba(0, 0, 0, 0.918) 100%
+    ),
+    url("https://www.maleta.nl/wp-content/uploads/2019/02/vakantie-naar-griekenland.jpg")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.somevak .vakk2 .vak2 h4 {
+  position: relative;
+  left: 3px;
+  top: 70%;
+  font-weight: 600;
+  color: #fff;
+}
+
+.somevak .vakk2 .vak2 p {
+  position: relative;
+  left: -133px;
+  top: 80%;
+  font-weight: 200;
+  font-size: 14px;
+  color: #fff;
+}
+
+.somevak .vakk2 .vak2 .pricetag1 {
+  top: 200px;
+  left: 250px;
+  position: absolute;
+  background: #00ad62;
+  border: 3px #fff;
+  color: white;
+  border-style: solid;
+  width: 5%;
+  padding: 2px;
+  border-radius: 5px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.somevak .vak3 {
+  top: 130px;
+  left: 1000px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+}
+
+.somevak .vakk3 .vak3 {
+  top: 130px;
+  left: 1000px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  padding: 0 1rem 0 0;
+}
+
+.somevak .vakk3 .vak3 .img {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.545) 100%
+    ),
+    url("https://i0.wp.com/wijhoudenvanamerika.nl/wp-content/uploads/2022/01/vakantie-tiny-house-nederland.jpg?resize=800%2C425&ssl=1")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  filter: drop-shadow(10px 10px 15px grey);
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.somevak .vakk3 .vak3 .img:hover {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.229) 0%,
+      rgba(0, 0, 0, 0.685) 100%
+    ),
+    url("https://i0.wp.com/wijhoudenvanamerika.nl/wp-content/uploads/2022/01/vakantie-tiny-house-nederland.jpg?resize=800%2C425&ssl=1")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.somevak .vakk3 .vak3 .img:active {
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.526) 0%,
+      rgba(0, 0, 0, 0.918) 100%
+    ),
+    url("https://i0.wp.com/wijhoudenvanamerika.nl/wp-content/uploads/2022/01/vakantie-tiny-house-nederland.jpg?resize=800%2C425&ssl=1")
+      no-repeat;
+  display: inline;
+  margin-top: 10px;
+  height: 30vh;
+  width: 25%;
+  position: relative;
+  border-radius: 2vh;
+  background-size: cover;
+  text-align: left;
+  display: flex;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.somevak .vakk3 .vak3 h4 {
+  position: relative;
+  left: 3px;
+  top: 70%;
+  font-weight: 600;
+  color: #fff;
+}
+
+.somevak .vakk3 .vak3 p {
+  position: relative;
+  left: -133px;
+  top: 80%;
+  font-weight: 200;
+  font-size: 14px;
+  color: #fff;
+}
+
+.somevak .vakk3 .vak3 .img .price {
+  top: 190px;
+  left: 120px;
+  position: relative;
+  background: #00ad62;
+  border: 3px #fff;
+  color: white;
+  border-style: solid;
+  width: 15%;
+  height: 30px;
+  padding: 2px;
+  border-radius: 5px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.somevak .vakk3 .vak3 .img .price h5 {
+  position: relative;
+  left: 2px;
+}
+
+.somevak .vakk3 .vak3 .pricetag1 {
+  top: -15px;
+  left: 250px;
+  position: relative;
+  background: #00ad62;
+  border: 3px #fff;
+  color: white;
+  border-style: solid;
+  width: 5%;
+  padding: 2px;
+  border-radius: 5px;
+  z-index: 2;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .somevak {
+    height: 100vh;
+  }
+  .somevak .vakk1 .vak1 .img {
+    width: 35%;
+  }
+  .somevak .vakk1 .vak1 .img:hover {
+    width: 35%;
+  }
+  .somevak .vakk1 .vak1 .img:active {
+    width: 35%;
+  }
+  .somevak .vakk1 .vak1 .img h4 {
+    font-size: 14px;
+  }
+  .somevak .vakk1 .vak1 .img p {
+    font-size: 12px;
+    left: -115px;
+  }
+  .somevak .vakk2 .vak2 .img {
+    width: 35%;
+  }
+  .somevak .vakk2 .vak2 .img:hover {
+    width: 35%;
+  }
+  .somevak .vakk2 .vak2 .img:active {
+    width: 35%;
+  }
+  .somevak .vakk2 .vak2 .img h4 {
+    font-size: 14px;
+  }
+  .somevak .vakk2 .vak2 .img p {
+    font-size: 12px;
+  }
+  .somevak .vakk3 .vak3 .img {
+    top: 250px;
+    right: 700px;
+    width: 35%;
+  }
+  .somevak .vakk3 .vak3 .img:hover {
+    width: 35%;
+  }
+  .somevak .vakk3 .vak3 .img:active {
+    width: 35%;
+  }
+  .somevak .vakk3 .vak3 .img h4 {
+    font-size: 14px;
+  }
+  .somevak .vakk3 .vak3 .img p {
+    font-size: 12px;
+    left: -115px;
+  }
+  .somevak .vakk3 .vak3 .pricetag1 {
+    top: 235px;
+    left: -450px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .somevak {
+    height: 150vh;
+    flex-direction: column;
+  }
+  .somevak .vakk1 .vak1 .img {
+    width: 70%;
+  }
+
+  .somevak .vakk1 .vak1 .pricetag1 {
+    width: 10%;
+  }
+
+  .somevak .vakk1 .vak1 .img:hover {
+    width: 70%;
+  }
+  .somevak .vakk1 .vak1 .img:active {
+    width: 70%;
+  }
+  .somevak .vakk1 .vak1 .img h4 {
+    font-size: 14px;
+  }
+  .somevak .vakk1 .vak1 .img p {
+    font-size: 8px;
+  }
+  .somevak .vakk2 .vak2 .img {
+    width: 70%;
+    top: 250px;
+    right: 460px;
+  }
+
+  .somevak .vakk2 .vak2 .pricetag1 {
+    width: 10%;
+  }
+
+  .somevak .vakk2 .vak2 .img:hover {
+    width: 70%;
+  }
+  .somevak .vakk2 .vak2 .img:active {
+    width: 70%;
+  }
+  .somevak .vakk2 .vak2 .img h4 {
+    font-size: 14px;
+  }
+  .somevak .vakk2 .vak2 .img p {
+    font-size: 8px;
+  }
+
+  .somevak .vakk2 .vak2 .pricetag1 {
+    top: 450px;
+    left: -215px;
+  }
+
+  .somevak .vakk3 .vak3 .img {
+    width: 70%;
+    top: 500px;
+    right: 918px;
+  }
+
+  .somevak .vakk3 .vak3 .pricetag1 {
+    width: 10%;
+  }
+
+  .somevak .vakk3 .vak3 .img:hover {
+    width: 70%;
+  }
+  .somevak .vakk3 .vak3 .img:active {
+    width: 70%;
+  }
+  .somevak .vakk3 .vak3 .img h4 {
+    font-size: 14px;
+  }
+  .somevak .vakk3 .vak3 .img p {
+    font-size: 8px;
+  }
+
+  .somevak .vakk3 .vakk3 .pricetag1 {
+    display: block;
+  }
+}
+
+/* Footer Section */
+
+.footer {
+  padding: 40px 0;
+  background-color: #00ad62;
+}
+
+.footer .social {
+  text-align: center;
+  padding: 25px;
+  color: #ededed;
+}
+
+.footer .social a {
+  font-size: 24px;
+  color: inherit;
+  border: 1px solid #ededed;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 8px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+  opacity: 0.9;
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.footer ul li a {
+  color: #ededed;
+  text-decoration: none;
+  font-family: var(--poptyp);
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.footer ul li a:hover {
+  opacity: 1;
+}
+
+.footer .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-family: var(--poptyp);
+  font-size: 13px;
+  color: rgb(190, 190, 190);
+}
